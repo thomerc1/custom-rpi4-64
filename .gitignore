@@ -56,4 +56,7 @@ build/*
 target/*
 host/*
 images/*
-
+staging/*
+.*config*
+.config
+Makefile

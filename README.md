@@ -28,14 +28,15 @@
 
 ## Project directory structure
 
-.<br>
-├── build<br>
-├── custom<br>
-├── host<br>
-├── images<br>
-├── Makefile<br>
-├── README.md<br>
-└── target<br>
+.
+├── build
+├── custom
+├── host
+├── images
+├── Makefile
+├── README.md
+├── staging
+└── target
 
 ## Compare default configs
 
@@ -61,4 +62,4 @@ nmap -sn 192.168.1.0/24
 
 ## System Configuration
 
-pw: MiPi464
+pw: MiPi777
