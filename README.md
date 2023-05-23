@@ -28,15 +28,15 @@
 
 ## Project directory structure
 
-.
-├── build
-├── custom
-├── host
-├── images
-├── Makefile
-├── README.md
-├── staging
-└── target
+.<br>
+├── build<br>
+├── custom<br>
+├── host<br>
+├── images<br>
+├── Makefile<br>
+├── README.md<br>
+├── staging<br>
+└── target<br>
 
 ## Compare default configs
 
