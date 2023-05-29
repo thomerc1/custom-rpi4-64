@@ -57,6 +57,10 @@ target/*
 host/*
 images/*
 staging/*
+dl/*
 .*config*
 .config
+.*
 Makefile
+build.log
+external.desc

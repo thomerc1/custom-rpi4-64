@@ -63,3 +63,14 @@ nmap -sn 192.168.1.0/24
 ## System Configuration
 
 pw: MiPi777
+
+## The cross-compiler
+
+/home/linsus/Downloads/Workspace/custom_rpi4_64/host/bin/aarch64-buildroot-linux-gnu-gcc
+
+## Enable remote debugging
+
+Under Toolchain enable "Build cross gdb for the host"
+enable BR2_PACKAGE_GDB_SERVER
+`make clean`
+`make`
