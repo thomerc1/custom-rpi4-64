@@ -56,14 +56,6 @@
 - dd if=images/sdcard.img of=/dev/{device} status=progress conv=fsync
   - example device: mmcblk0
 
-## After boot, test device is on network
-
-nmap -sn 192.168.1.0/24
-
-## System Configuration
-
-pw: MiPi777
-
 ## Build tool locations
 
 /home/linsus/Downloads/Workspace/custom_rpi4_64/host/bin/aarch64-buildroot-linux-gnu-gcc
@@ -95,3 +87,11 @@ pw: MiPi777
 - Within VSCode, select: "view-->run"
 - Select 'Remote GDB" from combobox
 - Debug as normal using IDE
+
+## After boot, test device is on network
+
+nmap -sn 192.168.1.0/24
+
+## System Configuration
+
+pw: MiPi777
