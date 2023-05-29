@@ -64,13 +64,34 @@ nmap -sn 192.168.1.0/24
 
 pw: MiPi777
 
-## The cross-compiler
+## Build tool locations
 
 /home/linsus/Downloads/Workspace/custom_rpi4_64/host/bin/aarch64-buildroot-linux-gnu-gcc
+/home/linsus/Downloads/Workspace/custom_rpi4_64/host/bin/aarch64-buildroot-linux-gnu-gdb
 
 ## Enable remote debugging
 
-Under Toolchain enable "Build cross gdb for the host"
-enable BR2_PACKAGE_GDB_SERVER
-`make clean`
-`make`
+- Under Toolchain enable "Build cross gdb for the host"
+- enable BR2_PACKAGE_GDB_SERVER
+- `make clean`
+- `make`
+- Either flash image to target or copy gdbserver binary to /usr/bin
+
+### Manual Remote GDB debugging of application (over ethernet)
+
+- The application must be compiled with debug symbols enabled
+  - Ex: `path_to_gcc/aarch64-buildroot-linux-gnu-gcc -g -o my_app my_app.c`
+  - If not flashing the target with an entire image that includes the executable of my_app, copy the executable to the target device
+- Copy the application to the target device
+- _On target_: `gdbserver :1234 my_app`
+- _On host_: `/home/linsus/Downloads/Workspace/custom_rpi4_64/host/bin/aarch64-buildroot-linux-gnu-gdb`
+- _On host_: `target remote <rpi ip addr>:1234`
+- _On host_: Add break points using `break my_app.c:<line_no>`
+
+### VS Code Remote GDB debugging of application (over ethernet)
+
+- The .vscode files within this project provide an example of the configuration needed to remote debug
+- Start GDB server on target: `gdbserver :1234 my_app`
+- Within VSCode, select: "view-->run"
+- Select 'Remote GDB" from combobox
+- Debug as normal using IDE
