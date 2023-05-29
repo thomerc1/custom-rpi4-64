@@ -52,14 +52,12 @@ Mkfile.old
 dkms.conf
 
 # Buildroot outputs
-build/*
-target/*
-host/*
-images/*
-staging/*
-dl/*
-.*config*
-.config
+build/
+target/
+host/
+images/
+staging/
+dl/
 .*
 Makefile
 build.log
