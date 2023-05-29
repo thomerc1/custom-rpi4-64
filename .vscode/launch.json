@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Remote GDB",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/custom/package/base_app/my_app",
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${workspaceFolder}/host/bin/aarch64-buildroot-linux-gnu-gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "miDebuggerServerAddress": "192.168.1.210:1234",
+      "serverLaunchTimeout": 20000,
+      "filterStderr": false,
+      "filterStdout": false,
+      "preLaunchTask": "build my program"
+    }
+  ]
+}

@@ -58,7 +58,9 @@ host/
 images/
 staging/
 dl/
-.*
+.br2*
+.config*
+..config*
 Makefile
 build.log
 external.desc

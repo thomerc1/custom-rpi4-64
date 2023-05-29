@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "build my program",
+      "command": "${workspaceFolder}/host/bin/aarch64-buildroot-linux-gnu-gcc",
+      "args": [
+        "-g",
+        "${workspaceFolder}/custom/package/base_app/src/my_app.c",
+        "-o",
+        "${workspaceFolder}/custom/package/base_app/src/my_app"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

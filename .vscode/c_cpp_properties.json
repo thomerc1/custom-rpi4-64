@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "name": "Raspberry Pi 4 64-bit",
+      "includePath": ["${workspaceFolder}/**"],
+      "defines": [],
+      "compilerPath": "${workspaceFolder}/host/bin/aarch64-buildroot-linux-gnu-gcc",
+      "cStandard": "c11",
+      "cppStandard": "c++11",
+      "intelliSenseMode": "gcc-x64"
+    }
+  ],
+  "version": 4
+}
