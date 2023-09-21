@@ -57,6 +57,16 @@
 ## Flashing SD card
 
 - lsblk to find sdcard device
+- For some unknown reason, I have needed to first format the SD card as vfat
+  1. sudo fdisk /dev/<device(mmcblk0>
+  2. d <- delete all partitions
+  3. n <- make a new one
+  4. p <- select primary
+  5. Allow default first and last sector
+  6. t <- set filesystem
+  7. b <- fat32
+  8. w <- write changes
+- sudo mkfs.vfat /dev/mmcblk0p1
 - sudo dd if=images/sdcard.img of=/dev/mmcblk0 status=progress conv=fsync
   - example device: mmcblk0
 
